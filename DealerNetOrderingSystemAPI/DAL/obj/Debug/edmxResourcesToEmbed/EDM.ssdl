@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="categories">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="category" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="items">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="item_description" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="item_price" Type="decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="categories_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="orders">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="order_number" Type="nvarchar" MaxLength="13" Nullable="false" />
+    <Property Name="order_date" Type="date" Nullable="false" />
+    <Property Name="order_status" Type="int" Nullable="false" />
+    <Property Name="items_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="stock_levels">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="items_id" Type="int" Nullable="false" />
+    <Property Name="stock_level" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_items_categories">
+    <End Role="categories" Type="Self.categories" Multiplicity="1" />
+    <End Role="items" Type="Self.items" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="categories">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="items">
+        <PropertyRef Name="categories_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_orders_items">
+    <End Role="items" Type="Self.items" Multiplicity="1" />
+    <End Role="orders" Type="Self.orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="items">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="orders">
+        <PropertyRef Name="items_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_stock_levels_items">
+    <End Role="items" Type="Self.items" Multiplicity="1" />
+    <End Role="stock_levels" Type="Self.stock_levels" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="items">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="stock_levels">
+        <PropertyRef Name="items_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="categories" EntityType="Self.categories" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="items" EntityType="Self.items" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="orders" EntityType="Self.orders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="stock_levels" EntityType="Self.stock_levels" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_items_categories" Association="Self.FK_items_categories">
+      <End Role="categories" EntitySet="categories" />
+      <End Role="items" EntitySet="items" />
+    </AssociationSet>
+    <AssociationSet Name="FK_orders_items" Association="Self.FK_orders_items">
+      <End Role="items" EntitySet="items" />
+      <End Role="orders" EntitySet="orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_stock_levels_items" Association="Self.FK_stock_levels_items">
+      <End Role="items" EntitySet="items" />
+      <End Role="stock_levels" EntitySet="stock_levels" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
