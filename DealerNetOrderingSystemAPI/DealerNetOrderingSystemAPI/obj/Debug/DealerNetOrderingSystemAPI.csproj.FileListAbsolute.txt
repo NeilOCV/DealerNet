@@ -61,6 +61,3 @@ C:\Source\GitHub\DealerNetOrderingSystemAPI\DealerNetOrderingSystemAPI\bin\Syste
 C:\Source\GitHub\DealerNetOrderingSystemAPI\DealerNetOrderingSystemAPI\obj\Debug\DealerNetOrderingSystemAPI.csprojResolveAssemblyReference.cache
 C:\Source\GitHub\DealerNetOrderingSystemAPI\DealerNetOrderingSystemAPI\obj\Debug\DealerNetOrderingSystemAPI.dll
 C:\Source\GitHub\DealerNetOrderingSystemAPI\DealerNetOrderingSystemAPI\obj\Debug\DealerNetOrderingSystemAPI.pdb
-C:\Source\GitHub\DealerNet\DealerNetOrderingSystemAPI\DealerNetOrderingSystemAPI\obj\Debug\DealerNetOrderingSystemAPI.csprojResolveAssemblyReference.cache
-C:\Source\GitHub\DealerNet\DealerNetOrderingSystemAPI\DealerNetOrderingSystemAPI\obj\Debug\DealerNetOrderingSystemAPI.dll
-C:\Source\GitHub\DealerNet\DealerNetOrderingSystemAPI\DealerNetOrderingSystemAPI\obj\Debug\DealerNetOrderingSystemAPI.pdb
