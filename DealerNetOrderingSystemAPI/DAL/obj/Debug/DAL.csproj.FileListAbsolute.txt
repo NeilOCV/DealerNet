@@ -3,3 +3,8 @@ C:\Source\GitHub\DealerNet\DealerNetOrderingSystemAPI\DAL\bin\Debug\DAL.pdb
 C:\Source\GitHub\DealerNet\DealerNetOrderingSystemAPI\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 C:\Source\GitHub\DealerNet\DealerNetOrderingSystemAPI\DAL\obj\Debug\DAL.dll
 C:\Source\GitHub\DealerNet\DealerNetOrderingSystemAPI\DAL\obj\Debug\DAL.pdb
+C:\Source\GitHub\DealerNet\DealerNetOrderingSystemAPI\DAL\bin\Debug\DAL.dll.config
+C:\Source\GitHub\DealerNet\DealerNetOrderingSystemAPI\DAL\bin\Debug\EntityFramework.dll
+C:\Source\GitHub\DealerNet\DealerNetOrderingSystemAPI\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Source\GitHub\DealerNet\DealerNetOrderingSystemAPI\DAL\bin\Debug\EntityFramework.xml
+C:\Source\GitHub\DealerNet\DealerNetOrderingSystemAPI\DAL\bin\Debug\EntityFramework.SqlServer.xml

@@ -10,5 +10,7 @@ namespace DAL
     {
         public string id { get; set; }
         public DateTime order_date { get; set; }
+        public string items_id { get; set; }
+        public int quantity { get; set; }
     }
 }
