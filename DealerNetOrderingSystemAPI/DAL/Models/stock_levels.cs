@@ -6,16 +6,14 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class orders
+    public class stock_levels
     {
-        #region Properties
-
         public string id { get; set; }
-        public DateTime time_stamp { get; set; }
-        public int quantity { get; set; }
         public string items_id { get; set; }
+        public int stock_level { get; set; }
 
-        #endregion
+
+
 
         #region CRUD
 
@@ -25,14 +23,14 @@ namespace DAL
         /// <param name="obj"></param>
         /// <param name="returnMessage"></param>
         /// <returns></returns>
-        public bool Create(orders obj, out string returnMessage)
+        public bool Create(stock_levels obj, out string returnMessage)
         {
             Guid id = Guid.NewGuid();
             obj.id = id.ToString();
             returnMessage = id.ToString();
             using (var edc = new EDC())
             {
-                edc.Orders.Add(obj);
+                edc.StockLevels.Add(obj);
                 try
                 {
                     edc.SaveChanges();
@@ -49,12 +47,12 @@ namespace DAL
         /// Called from GET (No parameter - get all)
         /// </summary>
         /// <returns></returns>
-        public List<orders> Get()
+        public List<stock_levels> Get()
         {
-            using (var edc=new EDC())
+            using (var edc = new EDC())
             {
-                var prog = from tb in edc.Orders.AsNoTracking()
-                           orderby tb.time_stamp
+                var prog = from tb in edc.StockLevels.AsNoTracking()
+                           orderby tb.stock_level
                            select tb;
                 return prog.ToList();
             }
@@ -64,11 +62,11 @@ namespace DAL
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public orders Get(string id)
+        public stock_levels Get(string id)
         {
             using (var edc = new EDC())
             {
-                var prog = from tb in edc.Orders.AsNoTracking()
+                var prog = from tb in edc.StockLevels.AsNoTracking()
                            where tb.id == id
                            select tb;
                 if (prog.Count() > 0)
@@ -82,7 +80,7 @@ namespace DAL
         /// <param name="obj"></param>
         /// <param name="returnMessage"></param>
         /// <returns></returns>
-        public bool Update(orders obj, out string returnMessage)
+        public bool Update(stock_levels obj, out string returnMessage)
         {
             returnMessage = string.Empty;
             using (var edc = new EDC())
@@ -111,7 +109,7 @@ namespace DAL
             returnMessage = string.Empty;
             using (var edc = new EDC())
             {
-                orders obj = Get(id);
+                stock_levels obj = Get(id);
 
                 edc.Entry(obj).State = System.Data.Entity.EntityState.Deleted;
                 try
@@ -128,5 +126,6 @@ namespace DAL
         }
 
         #endregion
+
     }
 }

@@ -51,8 +51,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EDC.cs" />
+    <Compile Include="Models\categories.cs" />
     <Compile Include="Models\items.cs" />
     <Compile Include="Models\orders.cs" />
+    <Compile Include="Models\stock_levels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
