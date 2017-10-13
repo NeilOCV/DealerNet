@@ -7,7 +7,7 @@ using System.Web.Http;
 
 namespace DealerNetOrderingSystemAPI.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class ValuesController : ApiController
     {
         // GET api/values

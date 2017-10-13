@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{06B85675-C459-4B90-AAAE-24242ABD7688}</ProjectGuid>
+    <ProjectGuid>{C3CDFD8D-4795-412C-98F1-83E619BB3ACA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DAL</RootNamespace>
@@ -50,11 +50,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DBContext.cs" />
-    <Compile Include="Models\categories.cs" />
+    <Compile Include="EDC.cs" />
     <Compile Include="Models\items.cs" />
     <Compile Include="Models\orders.cs" />
-    <Compile Include="Models\stock_levels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
